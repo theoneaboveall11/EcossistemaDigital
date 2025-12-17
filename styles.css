@@ -486,3 +486,280 @@ h1 {
         transform: translateY(0);
     }
 }
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE OPTIMIZATION
+   ============================================ */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .dashboard {
+        padding: 0 1.5rem;
+        margin: 2rem auto;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-actions {
+        gap: 2rem;
+    }
+
+    .content-grid {
+        gap: 1.5rem;
+    }
+
+    .actions-grid {
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile Large (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* Navbar Mobile */
+    .navbar {
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+        position: relative;
+    }
+
+    .brand {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .brand-logo-img {
+        height: 35px;
+    }
+
+    .client-info {
+        width: 100%;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 0.75rem;
+    }
+
+    .client-detail,
+    .status-detail {
+        align-items: center;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    /* Dashboard Header */
+    .dashboard {
+        margin: 1.5rem auto;
+        padding: 0 1rem;
+    }
+
+    .tag-pill {
+        font-size: 0.65rem;
+        padding: 0.35rem 0.8rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+
+    .btn-export {
+        width: 100%;
+        justify-content: center;
+        padding: 0.9rem 1.5rem;
+    }
+
+    /* Stepper Mobile */
+    .stepper-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+
+    .step-card {
+        padding: 1rem;
+        height: 85px;
+    }
+
+    .step-label {
+        font-size: 0.65rem;
+    }
+
+    .step-title {
+        font-size: 0.75rem;
+    }
+
+    /* Content Grid - Stack Vertically */
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        min-height: auto;
+    }
+
+    /* Strategy Card */
+    .strategy-card {
+        padding: 1.5rem;
+    }
+
+    .phase-headline {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .deliverable-box {
+        padding: 0.8rem 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .check-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+
+    .deliverable-content h4 {
+        font-size: 0.65rem;
+    }
+
+    .deliverable-content p {
+        font-size: 0.9rem;
+    }
+
+    /* Actions Grid - Stack Vertically */
+    .actions-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .action-column h5 {
+        font-size: 0.75rem;
+    }
+
+    .action-list li {
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Footer Metrics */
+    .card-footer {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .metric-box {
+        padding: 0.8rem;
+    }
+
+    .metric-value {
+        font-size: 1rem;
+    }
+
+    /* Visual Preview */
+    .visual-preview {
+        min-height: 300px;
+        order: -1;
+        /* Move image to top on mobile */
+    }
+
+    .preview-caption {
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+    }
+
+    .caption-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile Small (max-width: 480px) */
+@media (max-width: 480px) {
+
+    /* Extra small adjustments */
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+
+    .brand-logo-img {
+        height: 30px;
+    }
+
+    .brand-name {
+        font-size: 0.9rem;
+    }
+
+    .brand-tagline {
+        font-size: 0.6rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .tag-pill {
+        font-size: 0.6rem;
+        padding: 0.3rem 0.7rem;
+    }
+
+    .stepper-container {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+
+    .step-card {
+        height: 70px;
+        padding: 0.8rem;
+    }
+
+    .step-label {
+        font-size: 0.6rem;
+    }
+
+    .step-title {
+        font-size: 0.7rem;
+    }
+
+    .strategy-card {
+        padding: 1.2rem;
+        border-width: 1px;
+    }
+
+    .phase-headline {
+        font-size: 1.4rem;
+    }
+
+    .deliverable-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+
+    .action-list li {
+        font-size: 0.8rem;
+    }
+
+    .caption-text {
+        font-size: 1rem;
+    }
+
+    .preview-caption {
+        bottom: 0.8rem;
+        left: 0.8rem;
+        right: 0.8rem;
+    }
+}
