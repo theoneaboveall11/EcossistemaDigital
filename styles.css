@@ -46,10 +46,11 @@ body {
 }
 
 .brand-logo-img {
-    height: 40px;
+    height: 45px;
     width: auto;
     filter: brightness(1.1);
     transition: transform 0.3s ease;
+    object-fit: contain;
 }
 
 .brand-logo-img:hover {
