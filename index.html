@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronograma de Alta Performance | AVENIX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="roi-styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Fallback for icons if kit doesn't work -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="navbar">
+        <div class="brand">
+            <img src="avenix-logo.png" alt="AVENIX" class="brand-logo-img">
+            <div class="brand-text">
+                <span class="brand-name">AVENIX</span>
+                <span class="brand-tagline">ESTRATÉGIA & OPERAÇÕES</span>
+            </div>
+        </div>
+        <div class="client-info">
+            <div class="client-detail">
+                <span class="label">CLIENTE</span>
+                <span class="value">Do Paladar</span>
+            </div>
+            <div class="divider"></div>
+            <div class="status-detail">
+                <span class="label">STATUS</span>
+                <span class="value status-active"><span class="dot"></span> Aguardando Assinatura</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard">
+        <!-- Header Content -->
+        <header class="dash-header">
+            <div class="tag-pill">
+                <i class="fas fa-rocket"></i> PROTOCOLO DE LANÇAMENTO
+            </div>
+            <h1>Cronograma de <span class="highlight-serif">Alta Performance</span></h1>
+            <div class="header-actions">
+                <p class="description">
+                    Visualização estratégica do setup de 15 dias úteis. Nosso foco é <strong class="text-white">urgência
+                        organizada</strong>: cada fase desbloqueia valor imediato para a operação do restaurante.
+                </p>
+                <button class="btn-export">
+                    <i class="fas fa-download"></i> Exportar PDF
+                </button>
+            </div>
+        </header>
+
+        <!-- Stepper Navigation -->
+        <div class="stepper-container">
+            <div class="stepper-line"></div>
+            <div class="step-card active" onclick="switchPhase(1)" id="tab-1">
+                <span class="step-label">FASE 01 <i class="fas fa-check-circle done-icon"></i></span>
+                <span class="step-title">IMERSÃO...</span>
+            </div>
+            <div class="step-card" onclick="switchPhase(2)" id="tab-2">
+                <span class="step-label">FASE 02</span>
+                <span class="step-title">DESENVOLVIMENTO...</span>
+            </div>
+            <div class="step-card" onclick="switchPhase(3)" id="tab-3">
+                <span class="step-label">FASE 03</span>
+                <span class="step-title">PRODUÇÃO...</span>
+            </div>
+            <div class="step-card" onclick="switchPhase(4)" id="tab-4">
+                <span class="step-label">FASE 04</span>
+                <span class="step-title">GO-LIVE...</span>
+            </div>
+        </div>
+
+        <!-- Main Content Area (Dynamic) -->
+        <div class="content-grid">
+
+            <!-- Left Column: Strategic Data -->
+            <div class="strategy-card">
+                <div class="content-wrapper" id="content-wrapper">
+                    <!-- Dynamic Content will be injected here by JS -->
+                </div>
+            </div>
+
+            <!-- Right Column: Visual Preview -->
+            <div class="visual-preview" id="visual-preview">
+                <div class="preview-overlay"></div>
+                <img src="" alt="Fase Preview" class="preview-image" id="preview-image">
+                <div class="preview-caption">
+                    <span class="caption-label">VISUALIZAÇÃO</span>
+                    <p class="caption-text" id="preview-text">"Tecnologia invisível, resultados visíveis."</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ROI & Value Demonstration Section -->
+        <section class="roi-section">
+            <div class="section-header">
+                <div class="tag-pill secondary">
+                    <i class="fas fa-chart-line"></i> ANÁLISE DE VALOR
+                </div>
+                <h2>Por que a AVENIX é Financeiramente Mais Inteligente?</h2>
+                <p class="section-subtitle">Comparação estratégica: Equipe Interna vs Parceria AVENIX</p>
+            </div>
+
+            <!-- Cost Comparison -->
+            <div class="comparison-grid">
+                <div class="comparison-card internal-cost">
+                    <div class="card-header">
+                        <i class="fas fa-users"></i>
+                        <h3>Equipe Interna</h3>
+                    </div>
+                    <div class="cost-breakdown">
+                        <div class="cost-item">
+                            <span class="role">Gestor de Marketing</span>
+                            <span class="value">250.000 Kz</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="role">Designer Sénior</span>
+                            <span class="value">250.000 Kz</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="role">Videomaker (c/ equipamento)</span>
+                            <span class="value">350.000 Kz</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="role">Programador / Web Developer</span>
+                            <span class="value">400.000 Kz</span>
+                        </div>
+                    </div>
+                    <div class="total-cost">
+                        <span>TOTAL MENSAL</span>
+                        <span class="amount danger">1.250.000 Kz</span>
+                        <small>+ Impostos e Encargos</small>
+                    </div>
+                </div>
+
+                <div class="comparison-card avenix-cost">
+                    <div class="advantage-badge">ECONOMIA DE 55%</div>
+                    <div class="card-header">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Parceria AVENIX</h3>
+                    </div>
+                    <div class="cost-breakdown">
+                        <div class="cost-item">
+                            <span class="role">Menu Digital (Manutenção VIP)</span>
+                            <span class="value">69.900 Kz</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="role">Agentes IA (Monitoramento 24/7)</span>
+                            <span class="value">85.000 Kz</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="role">Social Media Full (1 Post/Dia)</span>
+                            <span class="value">180.000 Kz</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="role">Vídeo "Autoridade Máxima"</span>
+                            <span class="value">220.000 Kz</span>
+                        </div>
+                    </div>
+                    <div class="total-cost success">
+                        <span>TOTAL MENSAL</span>
+                        <span class="amount">554.900 Kz</span>
+                        <small>Equipa Completa + Tecnologia</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Savings Breakdown -->
+            <div class="savings-highlight">
+                <div class="savings-card">
+                    <i class="fas fa-piggy-bank"></i>
+                    <div class="savings-content">
+                        <span class="label">Economia Mensal</span>
+                        <span class="value">695.100 Kz</span>
+                    </div>
+                </div>
+                <div class="savings-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <div class="savings-content">
+                        <span class="label">Economia Anual</span>
+                        <span class="value highlight">8.341.200 Kz</span>
+                    </div>
+                </div>
+                <div class="savings-card">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="savings-content">
+                        <span class="label">ROI em 6 Meses</span>
+                        <span class="value">+340%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Benefits -->
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Atendimento 24/7</h4>
+                    <p>IA responde reservas e dúvidas mesmo fora do horário. Zero custo de recepcionista.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>Zero Impressão</h4>
+                    <p>Menu Digital atualizado em tempo real. Elimina custos de reimpressão.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <h4>+30% Ticket Médio</h4>
+                    <p>Engenharia de Cardápio e fotos atrativas aumentam valor do pedido.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h4>Produção Cinematográfica</h4>
+                    <p>Equipamento profissional de cinema sem precisar comprar.</p>
+                </div>
+            </div>
+
+            <!-- Investment Summary -->
+            <div class="investment-summary">
+                <img src="avenix-logo.png" alt="AVENIX" class="summary-logo">
+                <h3>Resumo de Investimento</h3>
+                <div class="investment-grid">
+                    <div class="investment-phase">
+                        <span class="phase-label">FASE 1: SETUP INICIAL</span>
+                        <span class="phase-value">629.900 Kz</span>
+                        <small>Pagamento facilitado 50/50</small>
+                    </div>
+                    <div class="divider-vertical"></div>
+                    <div class="investment-phase">
+                        <span class="phase-label">FASE 2: MENSALIDADE</span>
+                        <span class="phase-value">554.900 Kz</span>
+                        <small>Ecossistema 360º Completo</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
