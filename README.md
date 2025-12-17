@@ -1,6 +1,9 @@
 # Cronograma de Alta Performance - Do Paladar
 
-Apresentação visual interativa do roadmap de implementação para o cliente Do Paladar.
+
+Aprentação visual interativa do roadmap de implementação para o cliente Do Paladar.
+
+### 🔗 Acesse Online: [https://theoneaboveall11.github.io/EcossistemaDigital/](https://theoneaboveall11.github.io/EcossistemaDigital/)
 
 ## 🚀 Características
 
