@@ -161,19 +161,21 @@ function switchPhase(phaseId) {
         </div>
     `;
 
-    // 4. Inject Content
+    // 4. Inject Content with smooth transition
     const wrapper = document.getElementById('content-wrapper');
     wrapper.style.opacity = '0';
+    wrapper.style.transform = 'translateY(20px)';
+
     setTimeout(() => {
         wrapper.innerHTML = htmlContent;
         wrapper.style.opacity = '1';
+        wrapper.style.transform = 'translateY(0)';
     }, 200);
 
     // 5. Update Preview Image
     const imgElement = document.getElementById('preview-image');
     const textElement = document.getElementById('preview-text');
 
-    // Quick fade effect for image
     imgElement.style.opacity = '0';
     setTimeout(() => {
         const newSrc = data.image;
@@ -188,9 +190,68 @@ function switchPhase(phaseId) {
         };
         textElement.innerText = data.caption;
     }, 200);
+
+    // 6. Update Progress Bar
+    updateProgress(phaseId);
+
+    // 7. Update Navigation Buttons
+    updateNavigationButtons(phaseId);
+
+    // 8. Scroll to top smoothly
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // 9. Store current phase
+    window.currentPhase = phaseId;
 }
+
+// Update Progress Bar
+function updateProgress(phaseId) {
+    const progressBar = document.getElementById('progress-bar');
+    const progressCounter = document.getElementById('progress-counter');
+
+    const progressData = {
+        1: { width: '25%', text: 'Fase 1 de 4 • Dia 1-4 de 15' },
+        2: { width: '50%', text: 'Fase 2 de 4 • Dia 5-9 de 15' },
+        3: { width: '75%', text: 'Fase 3 de 4 • Dia 10-12 de 15' },
+        4: { width: '100%', text: 'Fase 4 de 4 • Dia 13-15 de 15' }
+    };
+
+    const data = progressData[phaseId];
+    progressBar.style.width = data.width;
+    progressCounter.textContent = data.text;
+}
+
+// Update Navigation Buttons
+function updateNavigationButtons(phaseId) {
+    const prevBtn = document.getElementById('nav-prev');
+    const nextBtn = document.getElementById('nav-next');
+
+    // Disable/Enable buttons
+    prevBtn.disabled = phaseId === 1;
+    nextBtn.disabled = phaseId === 4;
+}
+
+// Navigate Between Phases
+function navigatePhase(direction) {
+    const currentPhase = window.currentPhase || 1;
+    const newPhase = currentPhase + direction;
+
+    if (newPhase >= 1 && newPhase <= 4) {
+        switchPhase(newPhase);
+    }
+}
+
+// Keyboard Navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        navigatePhase(-1);
+    } else if (e.key === 'ArrowRight') {
+        navigatePhase(1);
+    }
+});
 
 // Initial Load
 document.addEventListener('DOMContentLoaded', () => {
     switchPhase(1); // Start with Phase 1
+    window.currentPhase = 1;
 });

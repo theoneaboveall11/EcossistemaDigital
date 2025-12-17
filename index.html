@@ -59,25 +59,64 @@
             </div>
         </header>
 
+        <!-- Progress Indicator -->
+        <div class="progress-wrapper">
+            <div class="progress-info">
+                <span class="progress-label">PROGRESSO DO CRONOGRAMA</span>
+                <span class="progress-counter" id="progress-counter">Fase 1 de 4 • Dia 1-4 de 15</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+
+        <!-- CTA Fixo -->
+        <div class="cta-banner">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h3>Pronto para Transformar seu Restaurante?</h3>
+                    <p>Agende uma reunião estratégica gratuita e receba um diagnóstico personalizado</p>
+                </div>
+                <button class="btn-cta-primary"
+                    onclick="window.open('https://wa.me/244923456789?text=Olá! Gostaria de agendar uma reunião sobre o Cronograma de Alta Performance', '_blank')">
+                    <i class="fab fa-whatsapp"></i> Agendar Reunião Gratuita
+                </button>
+            </div>
+        </div>
+
         <!-- Stepper Navigation -->
         <div class="stepper-container">
             <div class="stepper-line"></div>
             <div class="step-card active" onclick="switchPhase(1)" id="tab-1">
-                <span class="step-label">FASE 01 <i class="fas fa-check-circle done-icon"></i></span>
-                <span class="step-title">IMERSÃO...</span>
+                <div class="step-icon"><i class="fas fa-lightbulb"></i></div>
+                <span class="step-label">FASE 01</span>
+                <span class="step-title">IMERSÃO</span>
             </div>
             <div class="step-card" onclick="switchPhase(2)" id="tab-2">
+                <div class="step-icon"><i class="fas fa-code"></i></div>
                 <span class="step-label">FASE 02</span>
-                <span class="step-title">DESENVOLVIMENTO...</span>
+                <span class="step-title">DESENVOLVIMENTO</span>
             </div>
             <div class="step-card" onclick="switchPhase(3)" id="tab-3">
+                <div class="step-icon"><i class="fas fa-camera"></i></div>
                 <span class="step-label">FASE 03</span>
-                <span class="step-title">PRODUÇÃO...</span>
+                <span class="step-title">PRODUÇÃO</span>
             </div>
             <div class="step-card" onclick="switchPhase(4)" id="tab-4">
+                <div class="step-icon"><i class="fas fa-rocket"></i></div>
                 <span class="step-label">FASE 04</span>
-                <span class="step-title">GO-LIVE...</span>
+                <span class="step-title">GO-LIVE</span>
             </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="phase-navigation">
+            <button class="nav-btn nav-prev" id="nav-prev" onclick="navigatePhase(-1)">
+                <i class="fas fa-chevron-left"></i> Fase Anterior
+            </button>
+            <button class="nav-btn nav-next" id="nav-next" onclick="navigatePhase(1)">
+                Próxima Fase <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
 
         <!-- Main Content Area (Dynamic) -->
